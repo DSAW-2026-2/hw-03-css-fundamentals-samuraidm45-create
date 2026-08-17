@@ -1,58 +1,99 @@
 # HW03 — CSS Fundamentals
 
-**Week 3 · DSAW · Universidad de La Sabana**
+Semana 3 · DSAW · Universidad de La Sabana
 
-## Objective
+## Objetivo
 
-Style your project's landing page with CSS and make it responsive — **no libraries**.
+Diseñar y mejorar la landing page de CineHub utilizando CSS puro y hacer que la página sea responsive sin utilizar librerías externas.
 
-## Deliverables
+## Estructura del proyecto
 
-### `index.html`
-The HTML from HW02 (updated if needed).
+El proyecto está organizado de la siguiente manera:
 
-### `styles.css`
-All CSS in an external file. **Zero inline styles** (`style="..."`) anywhere in the HTML.
+- `index.html` — Página principal de CineHub.
+- `about.html` — Página de información del proyecto y del equipo.
+- `styles/main.css` — Estilos principales de la página.
+- `styles/responsive.css` — Reglas responsive para móvil, tablet y desktop.
+- `REFLECTION.md` — Reflexión sobre las decisiones tomadas en CSS.
+- `AI-LOG.md` — Bitácora sobre el uso de inteligencia artificial durante el desarrollo.
 
-Must demonstrate:
-- Selectors and specificity — not everything styled with element selectors
-- Box model: `margin`, `padding`, `border` used intentionally
-- **Flexbox or Grid** (or both) for at least one layout section
-- **Responsive design** with media queries for:
-  - 375px (mobile)
-  - 768px (tablet)
-  - 1280px (desktop)
+## CSS
 
-### `REFLECTION.md`
+Los estilos están separados en dos archivos.
 
-Write **at least 120 words** explaining a non-obvious CSS decision you made:
-- Why did you choose Grid over Flexbox (or vice versa) for a specific section?
-- Why `position: sticky` instead of `fixed`?
-- Why did you organize your CSS in the order you did?
+### `styles/main.css`
 
-Do not describe *what* the CSS does. Explain *why* you made that decision.
+Contiene los estilos base de la aplicación:
 
-## Layer 2
+- Tipografía.
+- Colores.
+- Espaciado.
+- Box model.
+- Botones y formularios.
+- Tarjetas de películas.
+- Header y navegación.
+- Footer.
+- Sección de preguntas frecuentes.
 
-Your `REFLECTION.md` must include a concrete comparison: "If I had used X, the result would have been Y. I chose Z because..."
+### `styles/responsive.css`
 
-## AI Log (`AI-LOG.md`)
+Contiene las reglas para adaptar la página a diferentes tamaños de pantalla:
 
-If you used AI to write CSS:
-- Which sections did you generate with AI?
-- What did you modify and why?
-- What was hardest to understand about the generated CSS?
+- Mobile: menos de 640px.
+- Tablet: entre 640px y 1024px.
+- Desktop: más de 1024px.
 
-## Deployment
+La página utiliza CSS Grid y Flexbox para organizar sus diferentes secciones.
 
-GitHub Pages — no build step.
+## FAQ
+
+La sección de preguntas frecuentes utiliza un acordeón realizado solamente con CSS.
+
+No se utiliza JavaScript.
+
+El funcionamiento se consigue utilizando el selector `:target`, haciendo que cada pregunta enlace a un elemento mediante su `id`.
+
+## Responsive Design
+
+La página cambia su distribución dependiendo del tamaño de la pantalla.
+
+En dispositivos móviles las tarjetas se muestran en una sola columna y la navegación se organiza verticalmente.
+
+En tablets las tarjetas utilizan dos columnas.
+
+En pantallas grandes las tarjetas utilizan tres columnas y se aumenta el espacio disponible para el contenido.
+
+## Tecnologías utilizadas
+
+- HTML5
+- CSS3
+- CSS Grid
+- Flexbox
+- Media Queries
+- Selector `:target`
+
+No se utilizaron librerías CSS externas.
+
+## Despliegue
+
+El proyecto se despliega utilizando GitHub Pages.
+
+No requiere ningún proceso de compilación.
 
 ## Autograding
 
-The pipeline will check:
-- ✅ `index.html`, `styles.css`, `REFLECTION.md` are present
-- ✅ HTMLHint + Stylelint pass with no errors
-- ✅ GitHub Pages responds with HTTP 200
-- ✅ Responsive, Flexbox/Grid, no inline styles, quality reflection (reviewed by Claude)
+El proyecto debe cumplir con los siguientes criterios:
 
-> **Submission rule:** If it is not deployed and public, it cannot be graded.
+- Estructura de archivos correcta.
+- HTML y CSS sin errores.
+- Uso de Flexbox o Grid.
+- Diseño responsive.
+- Breakpoint para mobile menor a 640px.
+- Breakpoint para tablet entre 640px y 1024px.
+- Acordeón CSS-only utilizando `:target`.
+- No utilizar JavaScript para el acordeón.
+- Página publicada públicamente mediante GitHub Pages.
+
+## Entrega
+
+La página debe estar desplegada públicamente en GitHub Pages para poder ser evaluada.
